@@ -1,0 +1,97 @@
+.home-section{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    background-image:  url(../../assets/day-care-hero-blobs-background.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+}
+.container-title{
+  margin: 3px;
+  padding: 7px;
+}
+.containerr{
+  min-height: 10vh;
+  width: 60vw;
+  /* background-color: rgb(16, 201, 226); */
+  margin: 50px auto;
+  border-radius: 10px;
+  background: rgb(140, 240, 234);
+background: linear-gradient(170deg, #7ae9ef 40%, #b3e9eb 100%);
+box-shadow: 5px 5px 14px 10px  rgba(191, 104, 85, 0.683);
+}
+h2{
+  text-align: center;
+  margin: 25px;
+}
+.search-box{
+  margin: 5px;
+  padding: 4px;
+  /* box-shadow: 5px 10px #888888; */
+}
+.inputcity{
+  width: 80%;
+  height: 25%;
+  display: block;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 8px 6px rgba(249, 144, 121, 0.555);
+}
+.Search-btn{
+  width: 70%;
+  height: 30px;
+  display: block;
+  margin: 30px auto;
+  font-size: 1.3rem;
+  border: 1px solid black;
+  background-color: azure;
+  padding: 2px;
+  box-sizing: content-box;
+  border-radius: 5px;
+}
+@media(max-width:800px) {
+  .containerr{
+      width: 90vw
+}
+.Search-btn{
+  width: 50%;
+  margin: 20px auto;
+  padding: 2px;
+}
+.nav-bar{
+  height: 60px;
+}
+}
+.w-report{
+  text-align: center;
+  /* color: ; */
+  font-family: 'Catamaran', sans-serif;
+  line-height: 200%;
+  font-size: 1.2rem;
+}
+.temp{
+  font-size: 2.5rem;
+}
+.error-msg{
+font-size: 2rem;
+color: red;
+text-decoration: blink;
+padding: 10px;
+}
+.tut{
+  padding: 9%;
+  line-height: 130%;
+}
+.tut p{
+  padding: 7px;
+}
