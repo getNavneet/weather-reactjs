@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./home.css";
 import { API_KEY } from "../../../api";
+import '../../loading.css'
 function Home() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -38,31 +39,30 @@ function manageDate(dateArg) {
   return `${date} ${month} (${day}) , ${year}`
 }
 const search = () => {
-  setData(null)
-  setLoading(true)
+  setData(null);
+  setLoading(true);
   const city = inputRef.current.value;
   fetch(`${weatherApi.baseUrl}?q=${city}&appid=${API_KEY}&units=metric`)
     .then(response => {
       return response.json();
     })
     .then(weatherData => {
-      if(weatherData.cod==400){
-        setErrorMsg("Please , Enter any city ")
-      }
-      else if(weatherData.cod==404){
-        setErrorMsg("Sorry, city not found")
-
-      }
-      else if (weatherData.cod==200){
+      if (weatherData.cod == 400) {
+        setErrorMsg("Please enter any city");
+      } else if (weatherData.cod == 404) {
+        setErrorMsg("Sorry, city not found");
+      } else if (weatherData.cod == 200) {
         setData(weatherData);
-        setErrorMsg(null)
+        setErrorMsg(null);
       }
+      setLoading(false); // Move setLoading here to ensure it is called after setting data and error messages
     })
     .catch(error => {
       console.error('Error fetching weather:', error);
+      setLoading(false); // Make sure to set loading to false in case of an error
     });
-    setLoading(false)
 };
+
   const inputRef = useRef(null);
   return (
     <>
@@ -98,6 +98,17 @@ const search = () => {
     </div>
       )
       }
+      {loading && (
+<div className="w-report">
+<div className=" flex items-center justify-center">
+<div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mt-4 text-center"></div>
+
+{/* You can add additional content or components here */}
+</div>
+<h1 className="mt-4"> loading data... </h1>
+</div>
+
+      )}
        {errorMsg && (
   <div className="w-report">
     <h1 > error occured while fetching data </h1>

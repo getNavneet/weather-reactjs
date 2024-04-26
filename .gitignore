@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 api.js
+notes.txt
+notes1.txt
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
